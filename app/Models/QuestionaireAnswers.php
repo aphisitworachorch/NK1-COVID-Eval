@@ -12,4 +12,14 @@ class QuestionaireAnswers extends Model
     protected $fillable = [
         'name','surname','church','care_group','answers', 'risk_score', 'risk_type'
     ];
+
+    public function haveChurch():\Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(ChurchInfoModel::class,'id','church');
+    }
+
+    public function haveCare():\Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(CareGroupModel::class,'id','care_group');
+    }
 }

@@ -1,9 +1,9 @@
-<template>
+<template v-bind:style="{ backgroundColor: getRiskColor(id).dark }">
     <div>
-        <b-container>
+        <b-container class="card py-2">
             <b-container class="py-2" style="text-align: center">
-                <h3>ขอบคุณที่ทำแบบคัดกรองผู้ป่วยโรคติดเชื้อไวรัสโคโรน่า 2019 (COVID-19)</h3>
-                <h5>โปรดยื่น QR Code ด้านล่างก่อนเข้าพื้นที่โบสถ์</h5>
+                <h3>Thankyou</h3>
+                <h5>Please bring this QR Code before Enter to Church Area</h5>
             </b-container>
             <b-container class="py-2">
                 <b-row align-v="center">
@@ -11,7 +11,7 @@
 
                     </b-col>
                     <b-col sm>
-                        <vue-qrcode v-bind:value="getQRCodeInfo(id)" :maskPattern="2" :width="300" :color="getRiskColor(id)" :margin="0"/>
+                        <vue-qrcode v-bind:value="getQRCodeInfo(id)" :type="image/png" :maskPattern="2" :width="400" :margin="0" :color="getRiskColor(id)" v-bind:style="{padding: '30px',important:true }"/>
                     </b-col>
                     <b-col sm>
 
@@ -19,10 +19,10 @@
                 </b-row>
             </b-container>
             <b-container class="py-2" style="text-align: center">
-                <h5>คะแนนความเสี่ยง : {{ id.risk_score }} / 100 คะแนน</h5>
+                <h5>Risk Score : {{ id.risk_score }} / 100 (Point)</h5>
             </b-container>
             <b-container class="py-2" style="text-align: center">
-                <b-button v-on:click="closeWindow">ปิดหน้าต่าง</b-button>
+                <b-button v-on:click="closeWindow">Close</b-button>
             </b-container>
         </b-container>
     </div>
@@ -31,7 +31,7 @@
 <script>
 import VueQrcode from 'vue-qrcode'
 export default {
-    name: "ThankYou",
+    name: "ThankYouEN",
     props:{
         id: Object
     },
@@ -85,6 +85,12 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="css">
+    .card{
+        background: rgba( 255, 255, 255, 0.45 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 3.0px );
+        -webkit-backdrop-filter: blur( 3.0px );
+        border-radius: 10px;
+    }
 </style>

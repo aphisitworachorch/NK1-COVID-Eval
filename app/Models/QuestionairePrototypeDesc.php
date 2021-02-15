@@ -11,7 +11,7 @@ class QuestionairePrototypeDesc extends Model
     use HasFactory;
     protected $table = 'questionaire_prototype_details';
     protected $fillable = [
-        'questionaire_id','choices'
+        'questionaire_id','choices','translation'
     ];
 
     public function questionPrototype(){

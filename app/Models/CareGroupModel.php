@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class QuestionairePrototype extends Model
+class CareGroupModel extends Model
 {
     use HasFactory;
-    protected $table = 'questionaire_prototype';
+    protected $table = 'care_info';
     protected $fillable = [
-        'sections_id','question_type','question_title','translation'
+        'care_name'
     ];
 }

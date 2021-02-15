@@ -25,8 +25,7 @@ Route::get('/infoLaraVel', function () {
     ]);
 });
 
-Route::get('/',[QuestionaireController::class,'showForm']);
-Route::get('/testq',[QuestionaireController::class,'makeQuestionaire']);
+Route::get('/{translation}',[QuestionaireController::class,'showForm']);
 Route::post('/covidans',[QuestionaireController::class,'insertData']);
 Route::get('/info/{id}',[QuestionaireController::class,'checkIn']);
 Route::post('/checkin',[QuestionaireController::class,'doCheckIn']);

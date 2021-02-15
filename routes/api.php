@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\QuestionaireController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::post('/seedQuestionaire',[QuestionaireController::class,'makeAllQuestionaire']);
+Route::post('/clearCache',function(){
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
 });

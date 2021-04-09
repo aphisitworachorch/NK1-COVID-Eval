@@ -209,5 +209,8 @@ export default {
 </script>
 
 <style scoped>
-
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200;400;600&display=swap');
+    body,h1,h2,h3,h4,h5,h6{
+        font-family: 'Sarabun', sans-serif;
+    }
 </style>
